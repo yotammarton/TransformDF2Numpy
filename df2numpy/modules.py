@@ -255,7 +255,10 @@ class TransformDF2Numpy:
                 self.transforms.append(trans)
 
             elif (num_uniques > 2) and (not is_numeric):
-                trans = Factorizer(self.min_category_count, self.fillnan)
+                if type(self.min_category_count) == dict:
+                    trans = Factorizer(self.min_category_count[col], self.fillnan)
+                else:
+                    trans = Factorizer(self.min_category_count, self.fillnan)
                 trans.fit_transform(df, col, self.variable_information)
                 self.transforms.append(trans)
                 if not trans.ct.all_thresholded:
