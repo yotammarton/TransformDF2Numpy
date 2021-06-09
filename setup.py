@@ -10,7 +10,7 @@ setup(
     author_email="kitayama-masaki@ed.tmu.ac.jp",
     install_requires=['numpy', 'pandas'],
     tests_require=["pytest"],
-    url='https://github.com/kitayama1234/TransformDF2Numpy',
+    url='https://github.com/yotammarton/TransformDF2Numpy',
     license='./LICENSE',
     packages=["df2numpy"]
 )
